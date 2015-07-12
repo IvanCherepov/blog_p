@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>Ivan's Wiki</title>
+
+</head>
+
+<body>
+ <div class="login-area">
+{% if user %}
+  <a class="login-link" href="/_edit/{{post_id}}">edit</a>   {{user.name}} (<a class="login-link" href="/logout">logout</a>)
+    {% else %}
+      
+<a class="login-link" href="/login">login</a>
+ |
+ <a class="login-link" href="/signup">signup</a>
+    {% endif %}
+  </div>
+
+ <br><br> <div id="content">
+   {{post.render() | safe}}  </div>
+</body>
+
+</html>
+
+
+
+
+
+
